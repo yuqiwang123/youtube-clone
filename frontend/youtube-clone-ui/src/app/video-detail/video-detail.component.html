@@ -1,0 +1,31 @@
+<div fxLayout="row">
+  <div fxFlex="65%" class="video-detail">
+    <app-video-player *ngIf="videoAvailable" [videoUrl]="videoUrl"></app-video-player>
+    <div class="mat-title">{{videoTitle}}</div>
+    <div fxLayout="row">
+      <div fxFlex="60%">
+        {{viewCount}} Views
+      </div>
+      <div fxFlex="40%">
+        <div style="display: inline-block;">
+          <button (click)="likeVideo()">
+            <mat-icon>thumb_up</mat-icon>
+            <div>{{likes}}</div>
+          </button>
+          <button (click)="disLikeVideo()">
+            <mat-icon>thumb_down</mat-icon>
+            <div>{{disLikes}}</div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div></div>
+    <div>{{videoDescription}}</div>
+  </div>
+  <div fxFlex="5%"></div>
+  <div fxFlex="30%">
+    Suggestions Bar
+  </div>
+</div>
+

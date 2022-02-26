@@ -1,0 +1,50 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened style="width: 200px;">
+    <div class="title">
+      <a class="item" routerLink="/" routerLinkActive="active">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+        <span>Home</span>
+      </a>
+    </div>
+    <div class="title">
+      <a class="item" href="!#">
+        <div>
+          <mat-icon>subscriptions</mat-icon>
+          <span class="sideTitle">Subsrciptions</span>
+        </div>
+      </a>
+    </div>
+    <div class="title">
+      <a class="item" href="!#">
+        <div>
+          <mat-icon>history</mat-icon>
+          <span class="sideTitle">History</span>
+        </div>
+      </a>
+    </div>
+    <div class="title">
+      <a class="item" href="!#">
+        <div>
+          <mat-icon aria-hidden="false" aria-label="Example thumbs up">thumb_up</mat-icon>
+          <span class="sideTitle">Liked Videos</span>
+        </div>
+      </a>
+    </div>
+    <hr>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="card-container">
+      <div *ngFor="let video of videos" class="card">
+        <mat-card class="example-card">
+          <a [routerLink]="['/video-details', video.id]">
+            <img mat-card-image [src]="video.thumbnailUrl" alt="...">
+            <mat-card-content>
+              <div>{{video.description}}</div>
+              <div class="views">{{video.viewCount}} views</div>
+            </mat-card-content>
+          </a>
+        </mat-card>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
